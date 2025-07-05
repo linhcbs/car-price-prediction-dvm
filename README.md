@@ -1,6 +1,6 @@
 # Project Car Price Prediction on DVM-Car dataset
 
-## 🎯 Introduction
+## Introduction
 
 Welcome to the **Car Price Prediction** project! The goal is to predict car prices as accurately as possible using machine learning models. These models are trained on the renowned **DVM-Car Dataset**, which comprises over 250,000+ car samples and advertisements.
 
@@ -9,12 +9,12 @@ This repository contains the core components of the project, including:
 - **Exploratory Data Analysis (EDA) file.**
 - **Preprocessing Pipeline**
 
-## ✨ Deployment
+## Deployment (may takes a while to load)
 - **RESTful API**: [car-price-prediction-dvm.onrender.com](https://car-price-prediction-dvm.onrender.com/) \
 (add **/docs** to see API document)
 
 
-## ✨ Features
+## Features
 
 * **Exploratory Data Analysis (EDA):** Provides charts and statistics offering deep insights into the car dataset.
 * **Machine Learning Models:** Utilizes various ML models to train and build accurate car price prediction models.
@@ -22,7 +22,7 @@ This repository contains the core components of the project, including:
 * **Web Interface:** A simple web application allowing users to input car information and receive instant price predictions.
 * **Containerization (Docker):** Ensures easy deployment across different platforms.
 
-## 🚀 Project Structure
+## Project Structure
 
 Describe your project's directory structure to help readers quickly locate important files.
 ```
@@ -48,7 +48,7 @@ Describe your project's directory structure to help readers quickly locate impor
 ├── Dockerfile                  # Docker configuration file
 └── requirements.txt            # List of required Python libraries
 ```
-## 🛠️ Tech Stack
+## Tech Stack
 
 List the main languages, frameworks, and libraries.
 
