@@ -9,6 +9,10 @@ This repository contains the core components of the project, including:
 - **Exploratory Data Analysis (EDA) file.**
 - **Preprocessing Pipeline**
 
+## ✨ Deployment
+- **RESTful API**: [car-price-prediction-dvm.onrender.com](https://car-price-prediction-dvm.onrender.com/) \
+(add **/docs** to see API document)
+
 
 ## ✨ Features
 
@@ -49,7 +53,7 @@ Describe your project's directory structure to help readers quickly locate impor
 List the main languages, frameworks, and libraries.
 
 * **Language:** Python
-* **API Framework:** FastAPI (or Flask, if used)
+* **API Framework:** FastAPI
 * **ML Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, category_encoders,...
-* **Deployment:** Docker, Uvicorn
+* **Deployment:** Docker (on Render.com), Uvicorn
 * **Web Interface:** HTML, CSS, Javascript
