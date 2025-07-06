@@ -1,4 +1,4 @@
-# Project Car Price Prediction on DVM-Car dataset
+# Wheel Worth - Car Price Prediction Project on DVM-Car dataset
 
 ## Introduction
 
@@ -9,13 +9,26 @@ This repository contains the core components of the project, including:
 - **Exploratory Data Analysis (EDA) file.**
 - **Preprocessing Pipeline**
 
-## Deployment (may takes a while to load)
-- **RESTful API**: [car-price-prediction-dvm.onrender.com](https://car-price-prediction-dvm.onrender.com/) \
-(add **/docs** to see API document)
+## Preview 
+![img-1](./preview/img1.png)
+![img-2](./preview/img2.png)
+![img-3](./preview/img3.png)
+
+## Deployment
+- **RESTful API**: 
+    - on [render.com](https://car-price-prediction-dvm.onrender.com/) (may takes a few minutes to load) 
+    - on [ngrok](https://a7c8-42-118-84-72.ngrok-free.app/) (not always open, url may change)
+
+- **Web Application**: 
+    - on [render.com](https://car-price-prediction-dvm.onrender.com/demo) (may takes a few minutes to load) 
+    - on [ngrok](https://a7c8-42-118-84-72.ngrok-free.app/demo) (not always open, url may change)
+- **API Endpoints**:  
+     - /docs: api documentation
+     - /predict: predict url
+     - /demo: web app demo
 
 
 ## Features
-
 * **Exploratory Data Analysis (EDA):** Provides charts and statistics offering deep insights into the car dataset.
 * **Machine Learning Models:** Utilizes various ML models to train and build accurate car price prediction models.
 * **Prediction API:** A RESTful API built with FastAPI for integrating car price predictions into other applications.
@@ -30,6 +43,13 @@ Describe your project's directory structure to help readers quickly locate impor
 ├── .venv/                      # Python virtual environment
 ├── app/                        # Directory containing the main API application
 │   ├── pycache/
+│   ├── static/                 # Web app source code
+│   │    ├── images/          
+│   │    ├── index.css
+│   │    ├── nicepages.css
+│   │    ├── index.html
+│   │    └── scripts.js
+│   │
 │   └── api.py                  # FastAPI API endpoints
 ├── notebooks/                  # Jupyter Notebooks for EDA and model experimentation
 │   ├── eda.ipynb               # Main EDA file
@@ -55,5 +75,14 @@ List the main languages, frameworks, and libraries.
 * **Language:** Python
 * **API Framework:** FastAPI
 * **ML Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, category_encoders,...
-* **Deployment:** Docker (on Render.com), Uvicorn
+* **Deployment:** Docker, Uvicorn, Ngrok
 * **Web Interface:** HTML, CSS, Javascript
+
+
+## Attribution
+The demo website was built using a template from nicepage.com, which I downloaded and modified.  
+Template link: (https://nicepage.com/s/18792/audi-aero-program-car-css-template)
+
+Special thanks to Nicepage for this beautiful template!
+
+

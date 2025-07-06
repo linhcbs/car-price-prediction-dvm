@@ -1,4 +1,3 @@
-from fastapi import FastAPI
 import sys
 sys.path.append('./src') 
 from data_preprocessor import DataPreprocessor
@@ -6,7 +5,14 @@ import pickle
 import numpy as np
 import pandas as pd
 from pydantic import BaseModel
+from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI, Request
+from fastapi.responses import RedirectResponse
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+import os
 
 
 # KHOI TAO API
@@ -19,6 +25,26 @@ with open('./src/preprocessor.pkl', 'rb') as f:
 
 with open('./src/model.pkl', 'rb') as f:
     model = pickle.load(f)
+
+
+    # Cho phép truy cập từ trình duyệt (nếu dùng fetch/ajax)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],  
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+# Mount thư mục static (app/static)
+BASE_DIR = os.path.dirname(__file__)
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+# Trả về index.html
+@app.get("/demo")
+async def redirect_to_static():
+    return RedirectResponse(url="/static/index.html")
 
 
 # DINH NGHIA CAU TRUC DU LIEU DAU VAO
@@ -42,7 +68,7 @@ class CarFeatures (BaseModel):
 # TAO ENDPOINT DE KIEM TRA HOAT DONG
 @app.get('/')
 def read_root() :
-    return {'message': 'Welcome to Car Price Prediction API! Go to /docs to see API documentation'}
+    return {'message': 'Welcome to Car Price Prediction API! Go to /docs to see API documentation. Go to /demo to try out the model.'}
 
 
 # TAO ENDPOINT DE LAY THONG TIN DU LIEU PHAN LOAI
@@ -97,13 +123,3 @@ def predict(features: CarFeatures) :
     }
 
 
-# TAO ENDPOINT DE LAY THONG TIN DU LIEU PHAN LOAI
-@app.get('/categorical-choices')
-def send_categorical_choices ():
-    return {
-        'choices': preprocessor.get_categorical_choices()
-    }
-
-
-# ! uvicorn app.api:app --reload
-# swagger: /docs

@@ -6,6 +6,8 @@ COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./app/api.py /code/api.py
+COPY ./app/static /code/static
+
 
 RUN mkdir -p /code/src
 
