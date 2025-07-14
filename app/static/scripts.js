@@ -94,6 +94,9 @@ async function renderFeatureInputs() {
     feature_label.textContent = feature_text;
     feature_div.appendChild(feature_label);
 
+    const br_tag = document.createElement("br"); 
+    feature_div.appendChild(br_tag);
+
     // feat input
     if (feature_isCat == false) {
       feature_input = document.createElement("input");

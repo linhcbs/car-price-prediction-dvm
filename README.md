@@ -72,7 +72,7 @@ Describe your project's directory structure to help readers quickly locate impor
 
 List the main languages, frameworks, and libraries.
 
-* **Language:** Python
+* **Language:** Python 3.11.9
 * **API Framework:** FastAPI
 * **ML Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, category_encoders,...
 * **Deployment:** Docker, Uvicorn, Ngrok
